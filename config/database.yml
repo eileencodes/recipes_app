@@ -17,16 +17,62 @@ default: &default
   password:
   socket: /tmp/mysql.sock
 
-development:
+default_replica: &default_replica
   <<: *default
-  database: recipes_app_development
+  replica: true
+
+development:
+  primary:
+    <<: *default
+    database: recipes_app_development
+  primary_replica:
+    <<: *default_replica
+    database: recipes_app_development
+    username: recipes_app_ro_user
+  meals:
+    <<: *default
+    database: recipes_meals_development
+    migrations_paths: db/meals_migrate
+  meals_replica:
+    <<: *default_replica
+    database: recipes_meals_development
+    username: recipes_meals_ro_user
+  desserts:
+    <<: *default
+    database: recipes_desserts_development
+    migrations_paths: db/desserts_migrate
+  desserts_replica:
+    <<: *default_replica
+    database: recipes_desserts_development
+    username: recipes_desserts_ro_user
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: recipes_app_test
+  primary:
+    <<: *default
+    database: recipes_app_test
+  primary_replica:
+    <<: *default_replica
+    database: recipes_app_test
+    username: recipes_app_ro_user
+  meals:
+    <<: *default
+    database: recipes_meals_test
+    migrations_paths: db/meals_migrate
+  meals_replica:
+    <<: *default_replica
+    database: recipes_meals_test
+    username: recipes_meals_ro_user
+  desserts:
+    <<: *default
+    database: recipes_desserts_test
+    migrations_paths: db/desserts_migrate
+  desserts_replica:
+    <<: *default_replica
+    database: recipes_desserts_test
+    username: recipes_desserts_ro_user
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -48,7 +94,27 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: recipes_app_production
-  username: recipes_app
-  password: <%= ENV['RECIPES_APP_DATABASE_PASSWORD'] %>
+  primary:
+    <<: *default
+    database: recipes_app_production
+    username: recipes_app
+  primary_replica:
+    <<: *default_replica
+    database: recipes_app_production
+    username: recipes_app_ro_user
+  meals:
+    <<: *default
+    database: recipes_meals_production
+    migrations_paths: db/meals_migrate
+  meals_replica:
+    <<: *default_replica
+    database: recipes_meals_production
+    username: recipes_meals_ro_user
+  desserts:
+    <<: *default
+    database: recipes_desserts_production
+    migrations_paths: db/desserts_migrate
+  desserts_replica:
+    <<: *default_replica
+    database: recipes_desserts_production
+    username: recipes_desserts_ro_user
