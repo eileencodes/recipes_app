@@ -1,2 +1,2 @@
-class Lunch < ApplicationRecord
+class Lunch < MealBase
 end

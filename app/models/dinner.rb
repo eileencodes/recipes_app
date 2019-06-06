@@ -1,2 +1,2 @@
-class Dinner < ApplicationRecord
+class Dinner < MealBase
 end
