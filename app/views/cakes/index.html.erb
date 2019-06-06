@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cakes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cake type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cakes.each do |cake| %>
+      <tr>
+        <td><%= cake.name %></td>
+        <td><%= cake.cake_type %></td>
+        <td><%= link_to 'Show', cake %></td>
+        <td><%= link_to 'Edit', edit_cake_path(cake) %></td>
+        <td><%= link_to 'Destroy', cake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cake', new_cake_path %>
