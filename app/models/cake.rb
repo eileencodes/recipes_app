@@ -1,2 +1,2 @@
-class Cake < ApplicationRecord
+class Cake < DessertBase
 end
