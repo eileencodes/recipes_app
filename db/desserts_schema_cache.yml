@@ -1,0 +1,188 @@
+--- !ruby/object:ActiveRecord::ConnectionAdapters::SchemaCache
+columns:
+  ar_internal_metadata:
+  - &1 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: key
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: varchar(255)
+        type: :string
+        limit: 255
+        precision: 
+        scale: 
+      extra: ''
+    'null': false
+    default: 
+    default_function: 
+    collation: utf8mb4_general_ci
+    comment: 
+  - &2 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: value
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: varchar(255)
+        type: :string
+        limit: 255
+        precision: 
+        scale: 
+      extra: ''
+    'null': true
+    default: 
+    default_function: 
+    collation: utf8mb4_general_ci
+    comment: 
+  - &3 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: created_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: datetime(6)
+        type: :datetime
+        limit: 
+        precision: 6
+        scale: 
+      extra: ''
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &4 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: updated_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: datetime(6)
+        type: :datetime
+        limit: 
+        precision: 6
+        scale: 
+      extra: ''
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  cakes:
+  - &5 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: id
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: bigint(20)
+        type: :integer
+        limit: 8
+        precision: 
+        scale: 
+      extra: auto_increment
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &6 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: name
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: varchar(255)
+        type: :string
+        limit: 255
+        precision: 
+        scale: 
+      extra: ''
+    'null': true
+    default: 
+    default_function: 
+    collation: utf8mb4_general_ci
+    comment: 
+  - &7 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: cake_type
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: int(11)
+        type: :integer
+        limit: 4
+        precision: 
+        scale: 
+      extra: ''
+    'null': true
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &8 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: created_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: datetime(6)
+        type: :datetime
+        limit: 
+        precision: 6
+        scale: 
+      extra: ''
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  - &9 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: updated_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: datetime(6)
+        type: :datetime
+        limit: 
+        precision: 6
+        scale: 
+      extra: ''
+    'null': false
+    default: 
+    default_function: 
+    collation: 
+    comment: 
+  schema_migrations:
+  - &10 !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::Column
+    name: version
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::MySQL::TypeMetadata
+      delegate_dc_obj: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+        sql_type: varchar(255)
+        type: :string
+        limit: 255
+        precision: 
+        scale: 
+      extra: ''
+    'null': false
+    default: 
+    default_function: 
+    collation: utf8mb4_general_ci
+    comment: 
+columns_hash:
+  ar_internal_metadata:
+    key: *1
+    value: *2
+    created_at: *3
+    updated_at: *4
+  cakes:
+    id: *5
+    name: *6
+    cake_type: *7
+    created_at: *8
+    updated_at: *9
+  schema_migrations:
+    version: *10
+primary_keys:
+  ar_internal_metadata: key
+  cakes: id
+  schema_migrations: version
+data_sources:
+  ar_internal_metadata: true
+  cakes: true
+  schema_migrations: true
+indexes:
+  ar_internal_metadata: []
+  cakes: []
+  schema_migrations: []
+version: 20190606142344
+database_version: !ruby/object:ActiveRecord::ConnectionAdapters::AbstractAdapter::Version
+  version:
+  - 5
+  - 7
+  - 25
+  full_version_string: 5.7.25
