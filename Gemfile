@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
-gem 'rails', path: "/Users/eileencodes/open_source/real_rails"
+gem 'rails', github: 'rails/rails'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
